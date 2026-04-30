@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Checkpoint
+  - LevelManager
+  - PlayerSpawn
+  - LevelExit
   layers:
   - Default
   - TransparentFX
@@ -42,16 +46,19 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Ground
-    uniqueID: 113180081
+    uniqueID: 2892770661
     locked: 0
   - name: Walls
-    uniqueID: 3158280555
+    uniqueID: 3179199511
+    locked: 0
+  - name: Decorations
+    uniqueID: 700268739
     locked: 0
   - name: Player
     uniqueID: 1382805013
     locked: 0
-  - name: Decorations
-    uniqueID: 700268739
+  - name: UI
+    uniqueID: 4011004165
     locked: 0
   m_RenderingLayers:
   - Default
