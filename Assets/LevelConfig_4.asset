@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05777031497f7424a84e9dd44a599902, type: 3}
+  m_Name: LevelConfig_4
+  m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
+  levelName: LevelFour
+  levelNumber: 4
+  tilemapPrefab: {fileID: 4585879692277930750, guid: a4982e3e8bceac743938a1920b70d63a, type: 3}
+  nextLevel: {fileID: 0}
