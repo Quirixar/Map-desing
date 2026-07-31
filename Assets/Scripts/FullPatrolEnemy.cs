@@ -36,6 +36,10 @@ public class FullPatrolEnemy : MonoBehaviour
     [Header("Vida")]
     public int playerHealth = 10;
 
+    [Header("Detección de paredes")]
+    public float detectionDistance = 0.5f;
+    public LayerMask wallLayer;
+
     [Header("Componentes internos")]
     private Vector2 originPosition;
     private Transform playerTarget;
@@ -132,8 +136,16 @@ public class FullPatrolEnemy : MonoBehaviour
     {
 
         if (!other.CompareTag("Player")) return;
-        var dmg = GetComponent<IDamageable>();
+        var dmg = GetComponent<IDamageable>(); // Cambiar "IDamageable" por "PlayerHealth" más adelante.
         if (dmg != null) dmg.TakeDamage(damageAmount);
+    }
+
+    bool IsWallNear()
+    {
+        Vector2 facingDirection = sr.flipX ? Vector2.left : Vector2.right;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, facingDirection, detectionDistance, wallLayer);
+        Debug.DrawRay(transform.position, facingDirection * detectionDistance, hit.collider != null ? Color.green:Color.red);
+        return hit.collider != null;
     }
 
     private void OnDrawGizmosSelected()
@@ -143,5 +155,4 @@ public class FullPatrolEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, loseRadius);
     }
-
 }

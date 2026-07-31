@@ -1,13 +1,11 @@
 using UnityEngine;
 using System.Collections;
-
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
     [Header("Configuracion")]
     public LevelConfig startingLevel;
-
     private LevelConfig currentConfig;
     private GameObject currentLevelInstance;
 
@@ -38,33 +36,26 @@ public class LevelManager : MonoBehaviour
             Debug.Log("No hay mas niveles. Fin del juego.");
             return;
         }
-
         if (currentLevelInstance != null)
             Destroy(currentLevelInstance);
-
         currentConfig = config;
         currentLevelInstance = Instantiate(config.tilemapPrefab);
-
         StartCoroutine(MovePlayerAfterLoad());
     }
 
     private IEnumerator MovePlayerAfterLoad()
     {
         yield return null;
-
         var player = GameObject.FindWithTag("Player");
-
         if (player == null)
         {
             Debug.LogWarning("LevelManager: No se encontro objeto con tag 'Player'. " +
-                             " y de paso vrifica que el jugador existe en la escena y tiene el tag asignado.");
+                             " y de paso verifica que el jugador existe en la escena y tiene el tag asignado.");
             yield break;
         }
-
         var rb = player.GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
-
         if (Checkpoint.hasCheckpoint)
         {
             player.transform.position = Checkpoint.lastCheckpointPosition;
@@ -84,12 +75,12 @@ public class LevelManager : MonoBehaviour
                                  "y tiene el tag PlayerSpawn asignado.");
             }
         }
-
         Debug.Log("Nivel cargado: " + currentConfig.levelName);
     }
 
     public void GoToNextLevel()
     {
+        Checkpoint.hasCheckpoint = false;
         LoadLevel(currentConfig.nextLevel);
     }
 }
