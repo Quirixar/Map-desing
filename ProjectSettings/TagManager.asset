@@ -48,17 +48,23 @@ TagManager:
   - name: Ground
     uniqueID: 2892770661
     locked: 0
-  - name: Walls
+  - name: WallsP1
     uniqueID: 3179199511
+    locked: 0
+  - name: WallsP2
+    uniqueID: 4281619823
     locked: 0
   - name: Decorations
     uniqueID: 700268739
     locked: 0
+  - name: Linternas
+    uniqueID: 190960637
+    locked: 0
   - name: Player
     uniqueID: 1382805013
     locked: 0
-  - name: Linternas
-    uniqueID: 190960637
+  - name: Enemy
+    uniqueID: 1850212823
     locked: 0
   - name: UI
     uniqueID: 4011004165
