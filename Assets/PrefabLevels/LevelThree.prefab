@@ -3007,7 +3007,7 @@ GameObject:
   - component: {fileID: 5999525678876319314}
   m_Layer: 10
   m_Name: RouteEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4377,7 +4377,7 @@ GameObject:
   - component: {fileID: 19711194558323371}
   m_Layer: 10
   m_Name: LinealEnemy (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18053,7 +18053,7 @@ GameObject:
   - component: {fileID: 265333217057157364}
   m_Layer: 10
   m_Name: LinealEnemy (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18332,6 +18332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8813350135533452299}
   - component: {fileID: 2439107910711741889}
+  - component: {fileID: 1792987407477791810}
   m_Layer: 0
   m_Name: LevelExit
   m_TagString: LevelExit
@@ -18400,6 +18401,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1792987407477791810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8259849041785891833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c73b6de2ff9e24ba36b40f9d9b91e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelExit
 --- !u!1 &8358899203640954259
 GameObject:
   m_ObjectHideFlags: 0

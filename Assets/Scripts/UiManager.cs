@@ -14,11 +14,9 @@ public class UIManager : MonoBehaviour
     public Image BossHealthFill;
     public int BossMaxHealth = 800;
 
-    /*[Header("Paneles")]
+    [Header("Paneles")]
     public GameObject GameOverPanel;
-    public GameObject VictoryPanel;*/
-
-
+    public GameObject VictoryPanel;
 
     void Awake()
     {

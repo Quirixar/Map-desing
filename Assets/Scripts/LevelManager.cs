@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
@@ -53,6 +54,9 @@ public class LevelManager : MonoBehaviour
                              " y de paso verifica que el jugador existe en la escena y tiene el tag asignado.");
             yield break;
         }
+
+        player.SetActive(true);
+
         var rb = player.GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
@@ -78,9 +82,23 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Nivel cargado: " + currentConfig.levelName);
     }
 
+    public void RetryCurrentLevel()
+    {
+        if (UIManager.Instance.GameOverPanel != null)
+            UIManager.Instance.GameOverPanel.SetActive(false);
+
+        Checkpoint.hasCheckpoint = false;
+
+        LoadLevel(currentConfig);
+    }
+
     public void GoToNextLevel()
     {
+        if(UIManager.Instance.VictoryPanel != null)
+            UIManager.Instance.VictoryPanel.SetActive(false);
+
         Checkpoint.hasCheckpoint = false;
         LoadLevel(currentConfig.nextLevel);
     }
+
 }
