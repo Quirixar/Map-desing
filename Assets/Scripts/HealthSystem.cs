@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthSystem : MonoBehaviour
+public class HealthSystem : MonoBehaviour, IDamageable
 {
-    [Header("Variables publicas")]
+    [Header("Variables públicas")]
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -44,5 +44,10 @@ public class HealthSystem : MonoBehaviour
         onHealthChanged?.Invoke(currentHealth);
     }
 
-
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        invincibleTimer = 0f;
+        onHealthChanged?.Invoke(currentHealth);
+    }
 }

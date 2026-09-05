@@ -132,11 +132,10 @@ public class FullPatrolEnemy : MonoBehaviour
         if (dir.x < -0.01f) sr.flipX = true;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-
-        if (!other.CompareTag("Player")) return;
-        var dmg = GetComponent<IDamageable>(); // Cambiar "IDamageable" por "PlayerHealth" más adelante.
+        if (!other.gameObject.CompareTag("Player")) return;
+        var dmg = other.gameObject.GetComponent<HealthSystem>();
         if (dmg != null) dmg.TakeDamage(damageAmount);
     }
 

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
@@ -25,8 +24,6 @@ public class UIManager : MonoBehaviour
         {
             Destroy(gameObject); return;
         }
-
-
     }
 
     public void UpdatePlayerHealth(int currentHealth)
@@ -45,7 +42,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    /*public void ShowGameOver()
+    public void ShowGameOver()
     {
         if (GameOverPanel != null) GameOverPanel.SetActive(true);
     }
@@ -53,5 +50,5 @@ public class UIManager : MonoBehaviour
     public void ShowVictory()
     {
         if (VictoryPanel != null) VictoryPanel.SetActive(true);
-    }*/
+    }
 }

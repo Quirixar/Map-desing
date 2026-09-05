@@ -5,7 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
-    [Header("Configuracion")]
+    [Header("Configuración")]
     public LevelConfig startingLevel;
     private LevelConfig currentConfig;
     private GameObject currentLevelInstance;
@@ -60,10 +60,23 @@ public class LevelManager : MonoBehaviour
         var rb = player.GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.linearVelocity = Vector2.zero;
+
+        var movement = player.GetComponent<PlayerController>();
+        if (movement != null) movement.enabled = true;
+        var attack = player.GetComponent<PlayerAttack>();
+        if (attack != null) attack.enabled = true;
+
+        // Este es el HealthSystem y el de arriba movimiento.
+        var health = player.GetComponent<HealthSystem>();
+        if (health != null) health.ResetHealth();
+        var dead = player.GetComponent<PlayerDead>();
+        if (dead != null) dead.ResetStatic();
+
         if (Checkpoint.hasCheckpoint)
         {
             player.transform.position = Checkpoint.lastCheckpointPosition;
         }
+
         else
         {
             var spawn = GameObject.FindWithTag("PlayerSpawn");
@@ -88,17 +101,15 @@ public class LevelManager : MonoBehaviour
             UIManager.Instance.GameOverPanel.SetActive(false);
 
         Checkpoint.hasCheckpoint = false;
-
         LoadLevel(currentConfig);
     }
 
     public void GoToNextLevel()
     {
-        if(UIManager.Instance.VictoryPanel != null)
+        if (UIManager.Instance.VictoryPanel != null)
             UIManager.Instance.VictoryPanel.SetActive(false);
 
         Checkpoint.hasCheckpoint = false;
         LoadLevel(currentConfig.nextLevel);
     }
-
 }

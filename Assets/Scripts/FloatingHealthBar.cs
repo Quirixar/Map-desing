@@ -6,15 +6,13 @@ public class FloatingHealthBar : MonoBehaviour
     private int maxHealth;
 
 
-    void Start()
+    private void Awake()
     {
-      HealthSystem enemyHealthSystem = GetComponentInParent<HealthSystem>();
-        if(enemyHealthSystem != null)
+        HealthSystem enemyHealthSystem = GetComponentInParent<HealthSystem>();
+        if (enemyHealthSystem != null)
         {
             maxHealth = enemyHealthSystem.maxHealth;
         }
-        
-
     }
 
     public void UpdateBar(int currentHealth)
@@ -24,8 +22,5 @@ public class FloatingHealthBar : MonoBehaviour
             healthFill.fillAmount = (float) currentHealth / maxHealth;
 
         }
-
-
-
     }
 }
