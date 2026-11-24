@@ -20,6 +20,7 @@ public class FullPatrolEnemy : MonoBehaviour
     public float chaseSpeed = 2f;
     public float returnSpeed = 2f;
     public float arrivalRadius = 0.15f;
+    public float stopChaseDistance = 0.6f;
 
     [Header("Espera")]
     public float waitTime = 4f;
@@ -110,7 +111,12 @@ public class FullPatrolEnemy : MonoBehaviour
             playerTarget = null;
             currentState = State.Return; return;
         }
+        if (dist <= stopChaseDistance)
+        {
+            rb2d.linearVelocity = Vector2.zero; return;
+        }
         MoveTowards(playerTarget.position, chaseSpeed);
+
     }
 
     private void TickReturn()

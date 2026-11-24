@@ -17431,8 +17431,20 @@ PrefabInstance:
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 586010810612621140, guid: 57d1b704fc700f74cb44387eeeaa14a6, type: 3}
-      propertyPath: m_BodyType
+      propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 586010810612621140, guid: 57d1b704fc700f74cb44387eeeaa14a6, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 586010810612621140, guid: 57d1b704fc700f74cb44387eeeaa14a6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 4002cee132dd49340905d69121f931e0, type: 2}
+    - target: {fileID: 586010810612621140, guid: 57d1b704fc700f74cb44387eeeaa14a6, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8018491798063595160, guid: 57d1b704fc700f74cb44387eeeaa14a6, type: 3}
       propertyPath: m_LocalPosition.x

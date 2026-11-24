@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5797885470348277549}
   - component: {fileID: 7154700534317271352}
   - component: {fileID: 7998441589533017709}
+  - component: {fileID: 2044292406280550522}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Enemy
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1139310221, guid: e5bd42e72c45c674c8c6717ef045f9ca, type: 3}
+  m_Sprite: {fileID: -3935032340282478731, guid: 941c3a5dc6f15d74ab60316f40d5d7be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +133,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03218317, y: 0}
+  m_Offset: {x: -0.00011101365, y: -0.18710971}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -142,7 +143,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6880703, y: 1}
+  m_Size: {x: 0.44016153, y: 0.5633702}
   m_EdgeRadius: 0
 --- !u!58 &3998017575859934394
 CircleCollider2D:
@@ -228,6 +229,7 @@ MonoBehaviour:
   chaseSpeed: 2
   returnSpeed: 2
   arrivalRadius: 0.15
+  stopChaseDistance: 0.6
   waitTime: 3
   detectionRadius: 5
   loseRadius: 7
@@ -325,6 +327,28 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   invincibleTime: 1
+--- !u!95 &2044292406280550522
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506591513910171212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 054e4c9a66f6fcb47b668a735be31863, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3801845542580572225
 GameObject:
   m_ObjectHideFlags: 0

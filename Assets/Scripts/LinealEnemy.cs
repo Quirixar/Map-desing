@@ -36,7 +36,7 @@ public class LinealEnemy : MonoBehaviour
         if (dist < arrivalRadius) goingToB = !goingToB;
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
         var dmg = other.GetComponent<IDamageable>();
