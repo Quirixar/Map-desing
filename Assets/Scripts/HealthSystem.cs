@@ -10,6 +10,7 @@ public class HealthSystem : MonoBehaviour, IDamageable
     [Header("Eventos")]
     public UnityEvent<int> onHealthChanged;
     public UnityEvent onDeath;
+    public UnityEvent onTakeDamage;
 
     [Header("Invencibilidad")]
     public float invincibleTime = 1f;
@@ -34,6 +35,7 @@ public class HealthSystem : MonoBehaviour, IDamageable
         currentHealth = Mathf.Max(0, currentHealth);
         invincibleTimer = invincibleTime;
         onHealthChanged?.Invoke(currentHealth);
+        onTakeDamage?.Invoke();
         if (currentHealth <= 0) onDeath?.Invoke();
     }
 
